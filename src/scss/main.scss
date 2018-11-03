@@ -1,0 +1,280 @@
+@import "reset";
+@import "primary";
+
+@mixin shadow($property)  {
+    -webkit-box-shadow: $property;
+    -moz-box-shadow: $property;
+    box-shadow: $property;
+    shadow: $property;
+}
+
+body {
+    background-color: $primary-color;
+    padding: 1%;
+}
+
+h1 {
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 4%;
+}
+
+p {
+    font-family: $primary-font;
+    font-size: 1.1em;
+}
+
+p#indexP {
+    width: 50%;
+    line-height: 1.3em;
+    margin: 0 auto;
+}
+
+a:link, a:visited {
+    color: darken($primary-color, 15);
+    text-decoration: none;
+}
+a:hover {
+    color: darken($primary-color, 30);
+}
+
+span#OKmessage {
+    color: green;
+}
+
+#wrapper {
+    width: 90%;
+    max-width: 1224px;
+    margin: 0 auto;
+    padding: 1%;
+    background-color: #f5f5f5;
+    border-radius: 20px;
+    @include shadow(3px 3px 14px -2px rgba(0,0,0,0.75));
+
+    p#main {
+        width: 50%;
+        margin: 0 auto;
+    }
+
+    span.listname {
+        font-weight: bold;
+        font-size: 1.3em;
+    }
+}
+
+#maincontent {
+    margin: 1%;
+    padding-bottom: 3%;
+    border-bottom: 1px solid rgb(179, 179, 179);
+}
+
+#index_flex {
+    width: 100%;
+    display: flex;
+    img {
+        height: auto;
+        width: 50%;
+        max-width: 500px;
+        max-height: 500px;
+        margin-right: 1%;
+    }
+    p {
+        width: 50%;
+    }
+}
+
+#editList {
+    margin-top: 4%;
+}
+
+#outputfield {
+    width: 60%;
+    margin: 0 auto;
+}
+
+
+// ul-lista med inköpslistor
+ul#outputList {
+    width: 90%;
+    margin: 0 auto;
+    height: 300px;
+    overflow-x: scroll;
+    border: 1px solid rgb(179, 179, 179);
+    padding: 2%;
+    margin-top: 2%;
+    @include shadow(3px 3px 14px -2px rgba(0,0,0,0.75));
+    li {
+        width: 95%;
+        p {
+        line-height: 1.6em;
+        color: darken($primary-color, 15);
+        padding: 2%;
+        font-size: 1.2em;
+        margin-top: 2%;
+        margin-bottom: 2%;
+        border-left: 2px solid $primary-color;
+        }
+    }
+    li p:hover {
+        cursor: pointer;
+        color: darken($primary-color, 23);
+        border-left: 2px solid darken($primary-color, 30);
+    }
+
+}
+
+
+// knapp för att ta bort en lista
+a.deleteList, {
+    font-family: helvetica;
+    width: 90%;
+    max-width: 150px;
+    font-size: 1.2em;
+    display: block;
+    text-decoration: none;
+    color: black;
+    text-align: center;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    text-align: left;
+    padding-bottom: 1%;
+}
+a.deleteList:hover, a.deleteProd:hover {
+    -webkit-filter: invert(50%);filter: invert(50%);
+}
+
+// output för listor (produkter)
+#editListMain {
+    width: 80%;
+    margin: 0 auto;
+    #outputProducts {
+        border: 1px solid gray;
+        padding: 1%;
+        margin-top: 2%;
+    }
+}
+ul#outputProd{
+    height: 250px;
+    overflow-y: scroll;
+    li {
+        border: 1px solid gray;
+        padding: 1%;
+        padding-right: 0;
+        margin-top: 1%;
+        margin-bottom: 1%;
+        display: flex;
+        width: 98%;
+        p {
+            width: 93%;
+            padding-top: 0.5%;
+        }
+        img:hover {
+            -webkit-filter: invert(50%);filter: invert(50%);
+        }
+    }
+}
+
+
+
+// formulär för att lägga till produkter i lista
+input[type=text]#productname, {
+    width: 60%;
+    max-width: 250px;
+    height: 32px;
+    padding-left: 1%;
+    font-size: 1.2em;
+}
+
+// lägg-till-knapp
+#addproduct  {
+    width: 20%;
+    min-width: 120px;
+    margin-left: 2%;
+    padding: 2%;
+    background-color: #f5f5f5;
+    border: 2px solid $primary-color;
+    height: 40px;
+}
+#addproduct:hover  {
+    background-color: $primary-color;
+    color: white;
+    cursor: pointer;
+
+}
+
+// formulär för att lägga till ny lista
+#addListForm {
+    display: flex;
+    width: 60%;
+    margin: 0 auto;
+    margin-top: 4%;
+    padding: 3%;
+    border: 1px solid rgb(179, 179, 179);
+}
+
+input[type=text]#name {
+    width: 70%;
+    height: 34px;
+}
+
+#addList {
+    width: 10%;
+    min-width: 100px;
+    background-color: #f5f5f5;
+    border: 2px solid $primary-color;
+    height: 40px;
+}
+#addList:hover{
+    background-color: $primary-color;
+    color: white;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+// media quieries 
+@media screen and (max-width: 800px) {
+    #outputfield {
+        width: 100%;
+    }
+
+    #index_flex {
+        display: block;
+        img {
+            display: block;
+            width: 90%;
+            margin: 0 auto;
+            margin-top: 4%;
+        }
+        p {
+            width: 90%;
+            border-bottom: 1px solid rgb(179, 179, 179);
+            padding-bottom: 4%;
+        }
+    }
+}
+
+@media screen and (max-width: 500px) {
+    #editListMain {
+        width: 100%;
+    }
+
+    #addListForm {
+        display: block;
+    }
+
+    input[type=text]#name {
+        width: 90%;
+        margin-top: 2%;
+    }
+    
+    #addList {
+        width: 90%;
+        margin-top: 2%;
+        min-width: 100px;
+    }
+}

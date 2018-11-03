@@ -1,0 +1,24 @@
+@import "primary";
+
+@mixin shadow($property)  {
+    -webkit-box-shadow: $property;
+    -moz-box-shadow: $property;
+    box-shadow: $property;
+    shadow: $property;
+}
+
+header img {
+    width: 100%;
+    max-width: 1224px;
+    margin: 0 auto;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    @include shadow(1px 1px 14px -2px rgba(0,0,0,0.75));
+}
+
+footer {
+    p {
+        padding: 2%;
+        line-height: 1.7em;
+    }
+}

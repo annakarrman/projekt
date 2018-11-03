@@ -1,0 +1,25 @@
+{
+  "name": "projekt",
+  "version": "1.0.0",
+  "description": "Projekt Webbutveckling II",
+  "main": "index.js",
+  "dependencies": {
+    "git": "^0.1.5",
+    "gulp": "^3.9.1"
+  },
+  "devDependencies": {
+    "gulp-clean-css": "^3.10.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-imagemin": "^4.1.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-uglify": "^3.0.1",
+    "gulp-watch": "^5.0.1",
+    "uglify": "^0.1.5",
+    "uglify-php": "^1.0.7"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Anna Kärrman",
+  "license": "ISC"
+}
